@@ -14,29 +14,29 @@ function webpackConfigGenerator(env) {
 
   const webpackInitConfig = {
     resolve: {
-      extensions: ['.js', '.ts']
+      extensions: ['.js'],
     },
     entry: {
-      app: ['./src/index.js']
+      app: ['./src/index.js'],
     },
     output: {
       path: path.join(basePath, distPath),
-      filename: '[chunkhash][name].js'
+      filename: '[chunkhash][name].js',
     },
     module: {
       rules: [
         {
           test: /\.js/,
           exclude: /node_modules/,
-          use: ['babel-loader', 'eslint-loader']
+          use: ['babel-loader', 'eslint-loader'],
         },
         {
           test: /\.css/,
           exclude: /node_modules/,
           use: [
             MiniCSSExtract.loader,
-            { loader: 'css-loader', options: { sourceMap: sourcemaps } }
-          ]
+            { loader: 'css-loader', options: { sourceMap: sourcemaps } },
+          ],
         },
         {
           test: /\.s(a|c)ss$/,
@@ -44,36 +44,24 @@ function webpackConfigGenerator(env) {
           use: [
             MiniCSSExtract.loader,
             { loader: 'css-loader', options: { sourceMap: sourcemaps } },
-            { loader: 'sass-loader', options: { sourceMap: sourcemaps } }
-          ]
-        }
-        // {
-        //   test: /\.(png|jpg|gif)$/,
-        //   use: [
-        //     {
-        //       loader: 'file-loader',
-        //       options: {
-        //         // outputPath: 'images/',
-        //         // publicPath: 'images/',
-        //       }
-        //     }
-        //   ]
-        // }
-      ]
+            { loader: 'sass-loader', options: { sourceMap: sourcemaps } },
+          ],
+        },
+      ],
     },
     plugins: [
       new HTMLWebpackPlugin({
         filename: indexOutput,
-        template: indextInput
+        template: indextInput,
       }),
       new MiniCSSExtract({
         filename: '[name].css',
-        chunkFilename: '[id].css'
+        chunkFilename: '[id].css',
       }),
       new webpack.DefinePlugin({
-        ENV: JSON.stringify(env)
-      })
-    ]
+        ENV: JSON.stringify(env),
+      }),
+    ],
   };
 
   return webpackInitConfig;

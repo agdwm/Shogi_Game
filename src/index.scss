@@ -1,8 +1,20 @@
-$color: red;
+@import './variables';
 
-table,
-th,
+table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0.125rem;
+}
+
 td {
-  border: 1px solid black;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid white;
   color: $color;
+  background-color: #F0D8A8;
+  text-align: center;
+}
+
+tr {
+  display: table-row;
 }
