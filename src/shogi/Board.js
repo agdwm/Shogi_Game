@@ -1,5 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-console */
+const $ = require('jquery');
+
 class Board {
   constructor() {
     this.cells = [];
@@ -39,7 +41,7 @@ class Board {
       table.appendChild(row);
     }
 
-    document.getElementById('main').appendChild(table);
+    $('#board').append(table);
   }
 }
 export default Board;
