@@ -1,17 +1,17 @@
-const PIECE_STATES = {
-  0: 'active',
-  1: 'triggered',
-  2: 'promote',
-  3: 'no-promoted', // can be promoted in the future
-  4: 'captured',
-  5: 'reintroduced',
-};
+const PIECE_STATES = [
+  'active',
+  'triggered',
+  'promote',
+  'no-promoted', // can be promoted in the future
+  'captured',
+  'reintroduced',
+];
 
 class Piece { 
   constructor() { 
     this.name = '';
     this.owner = '';
-    this.state = PIECE_STATES[0];
+    this.state = PIECE_STATES[0]
   }
 
   move(state) {
