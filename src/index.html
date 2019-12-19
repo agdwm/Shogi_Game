@@ -11,21 +11,23 @@
 
 <body>
 <div class="container" id="main">
-  <div class="board" id="board"></div>
-  <div class="turns" id="turns">
-    <form action="">
+  <div class="board-wrapper">
+    <h3>White</h3>
+    <div class="board" id="board"></div>
+    <h3>Black</h3>
+  </div>
+  <div class="form-coords-wrapper" id="turns">
+    <form>
       <h3>Black turn</h3>
       <fieldset>
         <label for="origin">Origin</label>
-        <input type="text" id="origin" placeholder="0,0">
-      </fieldset>
-      <fieldset>
+        <input type="text" id="origin" placeholder="0,0">      
         <label for="destination">Destination</label>
         <input type="text" id="destination" placeholder="0,0">
       </fieldset>
-      <button id="btn-play">Play</button>
+      <button class="btn-play" id="btn-play">Play</button>
     </form>
-    <p class="form-error" id="form-error"></p>
+    <p class="form-coords-error" id="form-error"></p>
 </div>
 </div>
 </body>
