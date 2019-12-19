@@ -7,11 +7,12 @@ const PIECE_STATES = [
   'reintroduced',
 ];
 
-class Piece { 
-  constructor() { 
+class Piece {
+  constructor() {
     this.name = '';
     this.owner = '';
-    this.state = PIECE_STATES[0]
+    // eslint-disable-next-line prefer-destructuring
+    this.state = PIECE_STATES[0];
   }
 
   move(state) {

@@ -27,14 +27,11 @@ class Board {
     this.paintBoard();
   }
 
-  update(origin, destination) {
-    const [firstOrig, secondOrig] = origin.split(',');
-    const [firstDest, secondDest] = destination.split(',');
-
+  update(firstOrig, secondOrig, firstDest, secondDest) {
     this.cells[firstDest][secondDest] = this.cells[firstOrig][secondOrig];
     this.cells[firstOrig][secondOrig] = '  ';
 
-    this.updateBoard();
+    this.repaintBoard();
   }
 
   removeBoard() {
@@ -58,7 +55,7 @@ class Board {
     $('#board').append(table);
   }
 
-  updateBoard() { 
+  repaintBoard() {
     this.removeBoard();
     this.paintBoard();
   }
