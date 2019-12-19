@@ -36,7 +36,7 @@ function webpackConfigGenerator(env) {
           use: [
             MiniCSSExtract.loader,
             { loader: 'css-loader', options: { sourceMap: sourcemaps } },
-          ],
+          ]
         },
         {
           test: /\.s(a|c)ss$/,
